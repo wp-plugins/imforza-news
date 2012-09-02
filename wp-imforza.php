@@ -150,10 +150,10 @@ add_action('admin_bar_menu', 'add_imforza_admin_bar_link',25);
 ################################################################################
 // Custom Wordpress Admin Footer
 ################################################################################
-function modify_footer_admin () {
+function imfza_footer_admin () {
   echo 'Created by <a href="http://www.imforza.com">imFORZA</a>';
 }
-add_filter('admin_footer_text', 'modify_footer_admin');
+add_filter('admin_footer_text', 'imfza_footer_admin');
 
 
 
