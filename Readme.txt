@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: bhubbard
-Donate link: http://imforza.com.com/
+Donate link: http://imforza.com/
 Tags: news, imforza
 Requires at least: 3.1
 Tested up to: 3.4.1
