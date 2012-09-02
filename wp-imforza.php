@@ -35,7 +35,7 @@ wp_add_dashboard_widget('custom_help_widget', 'Welcome to your new Website', 'cu
 }
 
 function custom_dashboard_help() {
-echo 'Welcome to your custom Wordpress site designed and developed by imFORZA. If you have any questions regarding your website or internet marketing please feel free to contact us at <a href="mailto:support@imforza.com">support@imforza.com</a>.
+echo 'Stay up-to-date with the latest marketing news from imFORZA. If you have any questions regarding your website or internet marketing please feel free to contact us at <a href="mailto:support@imforza.com">support@imforza.com</a>.
 <br /><br />
 <strong>Connect with Us:</strong> <a href="http://imforza.com" target="_blank" >Our Website</a> | <a href="http://www.facebook.com/pages/imFORZA-LLC/139444646068486" target="_blank" >Facebook</a> | <a href="http://twitter.com/imforza" target="_blank" >Twitter</a>';
 }
