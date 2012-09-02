@@ -3,7 +3,7 @@
 Plugin Name: imFORZA News
 Version: 1.0
 Plugin URI: http://www.imforza.com
-Description: imFORZA is a Web Design and Marketing company based out of El Segundo, CA. This plugin adds several features for imFORZA clients to keep up-to-date with the latest information from imFORZA.
+Description: imFORZA is a Web Design and Marketing company based out of El Segundo, CA. Stay up-to-date with the latest imFORZA news.
 Author: The imFORZA Team
 Author URI: http://www.imforza.com
 License: GPL v3
