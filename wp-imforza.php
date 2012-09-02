@@ -154,3 +154,27 @@ function modify_footer_admin () {
   echo 'Created by <a href="http://www.imforza.com">imFORZA</a>';
 }
 add_filter('admin_footer_text', 'modify_footer_admin');
+
+
+
+################################################################################
+// imFORZA Shortcodes
+################################################################################
+
+// Real Estate Footer
+function imfzafooter1Shortcode() {
+	return '<a href="http://realestate.imforza.com" target="_blank">Real Estate</a> by <a href="http://imforza.com" target="_blank">imFORZA</a>';
+}
+add_shortcode('imfza-realestate-footer', 'imfzafooter1Shortcode');
+
+// Website Design Footer
+function imfzafooter2Shortcode() {
+	return '<a href="http://www.imforza.com/services/website-design/" target="_blank">Website Design</a> by <a href="http://imforza.com" target="_blank">imFORZA</a>';
+}
+add_shortcode('imfza-design-footer', 'imfzafooter2Shortcode');
+
+// Website Development Footer
+function imfzafooter3Shortcode() {
+	return '<a href="http://www.imforza.com/services/website-development/" target="_blank">Website Development</a> by <a href="http://imforza.com" target="_blank">imFORZA</a>';
+}
+add_shortcode('imfza-dev-footer', 'imfzafooter3Shortcode');
