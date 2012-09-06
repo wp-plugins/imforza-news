@@ -11,3 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 imFORZA is a Web Design and Marketing company based out of El Segundo, CA. Stay up-to-date with the latest imFORZA news.
 
 == Description ==
+
+We are a full service [Internet marketing agency](http://www.imforza.com) that provides a common platform for companies from all industries to increase their web presence, customer base and ROI. For years, imFORZA developed its skills within the [real estate](http://realestate.imforza.com/) field, creating impressive websites and providing unmatched Internet marketing services that continually increased business for countless real estate firms and individual agents. The success of imFORZA was so great that in 2010, the agency was acquired and spun off from its former parent company so it could apply its [effective strategies and services](https://www.imforza.com/services) to a wider range of businesses in need.
+
+To date, imFORZA has expanded its reach to thousands of other businesses and many other industries like eCommerce, retail, medical, legal, manufacturing and more. imFORZA clients benefit from an all-inclusive solution that covers all of their marketing needs and can be specifically tailored to their size and specialty.
+
+This plugin allows wordpress users to quickly get the latest news from imFORZA, along with quick contact links to marketing services.
