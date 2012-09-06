@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: imFORZA News
-Version: 1.0
+Version: 1.0.5
 Plugin URI: http://www.imforza.com
 Description: imFORZA is a Web Design and Marketing company based out of El Segundo, CA. Stay up-to-date with the latest imFORZA news.
 Author: The imFORZA Team
@@ -150,10 +150,13 @@ add_action('admin_bar_menu', 'add_imforza_admin_bar_link',25);
 ################################################################################
 // Custom Wordpress Admin Footer
 ################################################################################
+/*
 function imfza_footer_admin () {
   echo 'Created by <a href="http://www.imforza.com">imFORZA</a>';
 }
 add_filter('admin_footer_text', 'imfza_footer_admin');
+
+*/
 
 ################################################################################
 // imFORZA Shortcodes
