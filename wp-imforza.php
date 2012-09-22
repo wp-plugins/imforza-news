@@ -70,6 +70,26 @@ function imforza_rss_widget(){
 }
 
 ################################################################################
+// imFORZA Twitter Dashboard Widget
+################################################################################
+function imforza_twitter_dashboard_widget(){
+		wp_widget_rss_output(array(
+            'url' => 'http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=imforza',  //put your feed URL here
+            'title' => 'Tweets from imFORZA', // Your feed title
+            'items' => 3, //how many posts to show
+            'show_summary' => 0, // 0 = false and 1 = true 
+            'show_author' => 0,
+            'show_date' => 'y'
+        ));      
+	}
+
+// Load our Widget onto Dasboard
+function load_imforza_twitter_dashboard_widget(){
+	wp_add_dashboard_widget( 'imforza-twitter-dashboard-widget', 'Tweets from imFORZA', 'imforza_twitter_dashboard_widget');
+	}
+add_action('wp_dashboard_setup', 'load_imforza_twitter_dashboard_widget');
+
+################################################################################
 // Add imFORZA Links to Admin Bar 
 ################################################################################
 function add_imforza_admin_bar_link() {
