@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: imFORZA News
-Version: 1.0.5
+Version: 1.0.6
 Plugin URI: http://www.imforza.com
 Description: imFORZA is a Web Design and Marketing company based out of El Segundo, CA. Stay up-to-date with the latest imFORZA news.
 Author: The imFORZA Team
@@ -25,22 +25,6 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-################################################################################
-// imFORZA Welcome Widget
-################################################################################
-function imforza_dashboard_widgets() {
-global $wp_meta_boxes;
-
-wp_add_dashboard_widget('custom_help_widget', 'Welcome to your new Website', 'custom_dashboard_help');
-}
-
-function custom_dashboard_help() {
-echo 'Stay up-to-date with the latest marketing news from imFORZA. If you have any questions regarding your website or internet marketing please feel free to contact us at <a href="mailto:support@imforza.com">support@imforza.com</a>.
-<br /><br />
-<strong>Connect with Us:</strong> <a href="http://imforza.com" target="_blank" >Our Website</a> | <a href="http://www.facebook.com/pages/imFORZA-LLC/139444646068486" target="_blank" >Facebook</a> | <a href="http://twitter.com/imforza" target="_blank" >Twitter</a>';
-}
-
-add_action('wp_dashboard_setup', 'imforza_dashboard_widgets');
 
 ################################################################################
 // imFORZA RSS News Widget
