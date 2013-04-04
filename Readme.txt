@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: bhubbard
 Donate link: http://imforza.com/
-Tags: news, imforza
+Tags: news, imforza, real estate, marketing, seo
 Requires at least: 3.1
-Tested up to: 3.5
-Stable tag: 1.0.6
+Tested up to: 3.5.1
+Stable tag: 1.0.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
