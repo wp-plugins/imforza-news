@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: imFORZA News
-Version: 1.0.7
+Version: 1.0.9
 Plugin URI: http://www.imforza.com/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=imforzanewsplugin
-Description: imFORZA is a Web Design and Marketing company based out of El Segundo, CA. Stay up-to-date with the latest imFORZA news.
-Author: The imFORZA Team
+Description: imFORZA is a Web Design and Marketing company based out of El Segundo, CA. Get quick access to imFORZA Support and the latest marketing news.
+Author: imFORZA
 Author URI: http://www.imforza.com/about-us/team/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=imforzanewsplugin
 License: GPL v3
 
@@ -29,18 +29,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // imFORZA RSS News Widget
 ################################################################################
 function imforza_rss_output(){
-	echo '<div class="rss-widget">';
+    echo '<div class="rss-widget">';
 
-	   wp_widget_rss_output(array(
-			'url' => 'http://www.imforza.com/feed/',  //put your feed URL here
-			'title' => 'Latest News from imforza &amp; Stirred', // Your feed title
-			'items' => 3, //how many posts to show
-			'show_summary' => 1, // 0 = false and 1 = true 
-			'show_author' => 0,
-			'show_date' => 1
-	   ));
+       wp_widget_rss_output(array(
+            'url' => 'http://www.imforza.com/feed/',  //put your feed URL here
+            'title' => 'Latest News from imforza &amp; Stirred', // Your feed title
+            'items' => 3, //how many posts to show
+            'show_summary' => 1, // 0 = false and 1 = true
+            'show_author' => 0,
+            'show_date' => 1
+       ));
 
-	   echo "</div>";
+       echo "</div>";
 }
 
 // Hook into wp_dashboard_setup and add our imFORZA widget
@@ -52,8 +52,63 @@ function imforza_rss_widget(){
   wp_add_dashboard_widget( 'imforza-rss', 'Latest News from imFORZA', 'imforza_rss_output');
 }
 
+
+
 ################################################################################
-// Add imFORZA Links to Admin Bar 
+// imFORZA Support Widget
+################################################################################
+
+function imforza_support_dashboard() { ?>
+
+<style>
+a.button.imforza-button {
+	background: #F7921E;
+	color:  #fff;
+	border: none;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+a.button.imforza-button:hover {
+	background: #ff971f;
+	color: #fff;
+
+}
+
+</style>
+
+	<div class="support-widget">
+	<div style="text-align:center;">
+	<a href="http://www.imforza.com/" target="_blank"><img src="<?php echo plugin_dir_url( __FILE__ ) . 'images/supportwidget-logo.png'; ?>" alt="imFORZA" height="60" /></a></div>
+	<div style="border-top: 1px solid #ddd; padding-top: 10px; text-align:center;">
+		<p><strong>Have a feature request, bug, or other support issue?</strong><br /><br />Visit the <a style="color: #37B34A;" href="http://help.imforza.com" target="_blank">imFORZA KnowledgeBase</a> or submit a ticket to get a fast response from our team.</p>
+		<p style="text-align: center;">
+		<ul class="imforza-button-list">
+			<li><a style="cursor: pointer;" class="button imforza-button" href="http://help.imforza.com/customer/portal/emails/new" title="imFORZA Web Support" target="_blank">Get Support</a></li>
+
+		<!--	<li><a style="cursor: pointer;" class="button imforza-button" href="http://help.imforza.com/customer/portal/emails/new" title="imFORZA Web Support" target="_blank">I need help with SEO?</a></li>
+
+			<li><a style="cursor: pointer;" class="button imforza-button" href="http://help.imforza.com/customer/portal/emails/new" title="imFORZA Web Support" target="_blank">Report a Bug</a></li>
+
+			<li><a style="cursor: pointer;" class="button imforza-button" href="http://help.imforza.com/customer/portal/emails/new" title="imFORZA Web Support" target="_blank">Request a Feature</a></li> -->
+		</ul>
+		</p>
+
+
+
+		</div>
+	</div>
+	<?php
+}
+
+add_action('wp_dashboard_setup', 'imforza_support_dashboard_setup');
+
+function imforza_support_dashboard_setup() {
+	wp_add_dashboard_widget( 'imforza_support', __( 'imFORZA Support' ), 'imforza_support_dashboard' );
+}
+
+################################################################################
+// Add imFORZA Links to Admin Bar
 ################################################################################
 function add_imforza_admin_bar_link() {
 	global $wp_admin_bar;
@@ -61,8 +116,8 @@ function add_imforza_admin_bar_link() {
 		return;
 	$wp_admin_bar->add_menu( array(
 	'id' => 'imforza_link',
-	'title' => __( 'imFORZA'),
-	'href' => __('http://imforza.com/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=imforzanewsplugin'),
+	'title' => __( '<img src="http://internal.imforza.com/logos/img/icon-16.png" class="imforza-logo" alt="imFORZA" style="margin: 0 5px -3px 0 !important;" /> imFORZA' ),
+	'href' => __('http://imforza.com/#utm_source=wpadmin&amp;utm_medium=imforzaplugin&amp;utm_campaign=wpadminbar'),
 	"meta" => array("target" => "blank", "onClick" => "_gaq.push(['_trackEvent', 'imFORZA News Plugin', 'Homepage']);")
 	));
 
@@ -71,7 +126,7 @@ function add_imforza_admin_bar_link() {
 		'parent' => 'imforza_link',
 		'id'     => 'imforza_shop',
 		'title' => __( 'Shop'),
-		'href' => __('http://imforza.com/shop/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=imforzanewsplugin'),
+		'href' => __('http://imforza.com/shop/#utm_source=wpadmin&amp;utm_medium=imforzaplugin&amp;utm_campaign=wpadminbar'),
 		"meta" => array("target" => "blank", "onClick" => "_gaq.push(['_trackEvent', 'imFORZA News Plugin', 'Shop']);")
 	));
 
@@ -122,7 +177,7 @@ function add_imforza_admin_bar_link() {
 		'parent' => 'imforza_link',
 		'id'     => 'imforza_support',
 		'title' => __( 'Support'),
-		'href' => __('http://www.imforza.com/support/get-support/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=imforzanewsplugin'),
+		'href' => __('http://help.imforza.com/customer/portal/emails/new'),
 		"meta" => array("target" => "blank", "onClick" => "_gaq.push(['_trackEvent', 'imFORZA News Plugin', 'Support']);")
 	));
 
@@ -136,19 +191,19 @@ add_action('admin_bar_menu', 'add_imforza_admin_bar_link',25);
 
 // Real Estate Footer
 function imfzafooter1Shortcode() {
-	return '<a href="http://realestate.imforza.com/#utm_source=' .get_bloginfo('name') . '&utm_medium=plugin&utm_campaign=imforzanewsplugin" target="_blank" class="imfzalink">Real Estate</a> by <a href="http://imforza.com/#utm_source=' .get_bloginfo('name') . '&utm_medium=plugin&utm_campaign=imforzanewsplugin" target="_blank" class="imfzalink">imFORZA</a>';
+	return '<a href="http://realestate.imforza.com/#utm_source=' .get_bloginfo('url') . '&amp;utm_medium=plugin&amp;utm_campaign=imforzanewsplugin" target="_blank" class="imfzalink" >Real Estate</a> by <a href="http://imforza.com/#utm_source=' .get_bloginfo('url') . '&amp;utm_medium=plugin&amp;utm_campaign=imforzanewsplugin" target="_blank" class="imfzalink" >imFORZA</a>';
 }
 add_shortcode('imfza-realestate-footer', 'imfzafooter1Shortcode');
 
 // Website Design Footer
 function imfzafooter2Shortcode() {
-	return '<a href="http://www.imforza.com/services/website-design/#utm_source=' .get_bloginfo('name') . '&utm_medium=plugin&utm_campaign=imforzanewsplugin" target="_blank" class="imfzalink">Website Design</a> by <a href="http://imforza.com/#utm_source=' .get_bloginfo('name') . '&utm_medium=plugin&utm_campaign=imforzanewsplugin" target="_blank" class="imfzalink">imFORZA</a>';
+	return '<a href="http://www.imforza.com/services/website-design/#utm_source=' .get_bloginfo('url') . '&amp;utm_medium=plugin&amp;utm_campaign=imforzanewsplugin" target="_blank" class="imfzalink">Website Design</a> by <a href="http://imforza.com/#utm_source=' .get_bloginfo('url') . '&amp;utm_medium=plugin&amp;utm_campaign=imforzanewsplugin" target="_blank" class="imfzalink">imFORZA</a>';
 }
 add_shortcode('imfza-design-footer', 'imfzafooter2Shortcode');
 
 // Website Development Footer
 function imfzafooter3Shortcode() {
-	return '<a href="http://www.imforza.com/services/website-development/#utm_source=' .get_bloginfo('name') . '&utm_medium=plugin&utm_campaign=imforzanewsplugin" target="_blank" class="imfzalink">Website Development</a> by <a href="http://imforza.com/#utm_source=' .get_bloginfo('name') . '&utm_medium=plugin&utm_campaign=imforzanewsplugin" target="_blank" class="imfzalink">imFORZA</a>';
+	return '<a href="http://www.imforza.com/services/website-development/#utm_source=' .get_bloginfo('url') . '&amp;utm_medium=plugin&amp;utm_campaign=imforzanewsplugin" target="_blank" class="imfzalink">Website Development</a> by <a href="http://imforza.com/#utm_source=' .get_bloginfo('url') . '&amp;utm_medium=plugin&amp;utm_campaign=imforzanewsplugin" target="_blank" class="imfzalink">imFORZA</a>';
 }
 add_shortcode('imfza-dev-footer', 'imfzafooter3Shortcode');
 
@@ -217,3 +272,4 @@ add_shortcode('imfza-dev-footer', 'imfzafooter3Shortcode');
 
 // PressTrends WordPress Action
 add_action('admin_init', 'presstrends_imFORZANews_plugin');
+
