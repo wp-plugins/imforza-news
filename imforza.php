@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: imFORZA News
-Version: 1.0.9
+Version: 1.1.0
 Plugin URI: http://www.imforza.com/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=imforzanewsplugin
 Description: imFORZA is a Web Design and Marketing company based out of El Segundo, CA. Get quick access to imFORZA Support and the latest marketing news.
 Author: imFORZA
@@ -116,7 +116,7 @@ function add_imforza_admin_bar_link() {
 		return;
 	$wp_admin_bar->add_menu( array(
 	'id' => 'imforza_link',
-	'title' => __( '<img src="http://internal.imforza.com/logos/img/icon-16.png" class="imforza-logo" alt="imFORZA" style="margin: 0 5px -3px 0 !important;" /> imFORZA' ),
+	'title' => __( 'imFORZA' ),
 	'href' => __('http://imforza.com/#utm_source=wpadmin&amp;utm_medium=imforzaplugin&amp;utm_campaign=wpadminbar'),
 	"meta" => array("target" => "blank", "onClick" => "_gaq.push(['_trackEvent', 'imFORZA News Plugin', 'Homepage']);")
 	));
