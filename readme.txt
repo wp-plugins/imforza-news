@@ -4,7 +4,7 @@ Donate link: http://imforza.com/
 Tags: news, imFORZA, realestate, marketing
 Requires at least: 3.1
 Tested up to: 4.0
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,4 +16,11 @@ imFORZA is a Web Design and Marketing company based out of El Segundo, CA. Stay 
 
 To date, imFORZA has expanded its reach to thousands of other businesses and many other industries like eCommerce, retail, medical, legal, manufacturing and more. imFORZA clients benefit from an all-inclusive solution that covers all of their marketing needs and can be specifically tailored to their size and specialty.
 
-This plugin allows wordpress users to quickly get the latest news from imFORZA, along with quick contact links to marketing services.
+This plugin allows WordPress users to quickly get the latest news from imFORZA, along with quick contact links to marketing services.
+
+
+== Changelog ==
+
+= 1.2.0 =
+* Added better WP Engine Support
+* Removed Legacy Links
