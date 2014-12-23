@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: imFORZA News
-Version: 1.2.1
+Version: 1.2.2
 Plugin URI: http://www.imforza.com/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=imforzanewsplugin
 Description: imFORZA is a Web Design and Marketing company based out of El Segundo, CA. Get quick access to imFORZA Support and the latest marketing news.
 Author: imFORZA
