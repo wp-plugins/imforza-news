@@ -3,8 +3,8 @@ Contributors: bhubbard, imforza
 Donate link: http://imforza.com/
 Tags: news, imFORZA, realestate, marketing
 Requires at least: 3.1
-Tested up to: 4.0
-Stable tag: 1.2.0
+Tested up to: 4.1
+Stable tag: 1.2.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -20,6 +20,10 @@ This plugin allows WordPress users to quickly get the latest news from imFORZA, 
 
 
 == Changelog ==
+
+= 1.2.1 =
+* Added support for WP101
+* Set preferred default for DISALLOW_FILE_EDIT when possible
 
 = 1.2.0 =
 * Added better WP Engine Support
