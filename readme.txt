@@ -4,7 +4,7 @@ Donate link: http://imforza.com/
 Tags: news, imFORZA, realestate, marketing
 Requires at least: 3.1
 Tested up to: 4.1
-Stable tag: 1.2.2
+Stable tag: 1.2.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -20,6 +20,9 @@ This plugin allows WordPress users to quickly get the latest news from imFORZA, 
 
 
 == Changelog ==
+
+= 1.2.4 =
+* Hide Jetpack Features that duplicate other plugins we use (Site Verification, Feedback Form, VaultPress, VideoPress)
 
 = 1.2.3 =
 * Hide plugins for non imFORZA Users
