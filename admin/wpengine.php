@@ -18,7 +18,8 @@ if ( $current_user->user_login != 'wpengine' && $current_user->user_login != 'im
  * Remove the WP Engine menu page
  */
 function imforzawpe_remove_menu_pages() {
-	remove_menu_page( 'wpengine-common' );
+	remove_menu_page( 'wpengine-common' ); // WP Engine
+	remove_menu_page( 'plugins.php' ); // Plugins
 }
 
 /**
@@ -42,6 +43,7 @@ function imforzawpe_remove_editor_menu() {
 function imforzawpe_hide_update_notice_to_all_but_admin_users() {
         remove_action( 'admin_notices', 'update_nag', 3 );
 }
+
 
 
 

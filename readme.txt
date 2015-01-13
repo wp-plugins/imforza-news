@@ -21,6 +21,9 @@ This plugin allows WordPress users to quickly get the latest news from imFORZA, 
 
 == Changelog ==
 
+= 1.2.3 =
+* Hide plugins for non imFORZA Users
+
 = 1.2.2 =
 * Hide more WP101 videos
 
