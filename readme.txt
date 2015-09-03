@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: bhubbard, imforza
+Contributors: bhubbard, imforza, acevans27
 Donate link: http://imforza.com/
 Tags: news, imFORZA, realestate, marketing
 Requires at least: 3.1
