@@ -85,3 +85,111 @@ add_action('wp_dashboard_setup', 'imforza_add_support_dashboard_widget');
 function imforza_add_support_dashboard_widget() {
 	wp_add_dashboard_widget( 'imforza_support', __( 'imFORZA Support' ), 'imforza_support_dashboard_widget' );
 }
+
+
+
+
+
+
+
+/**
+ * Adds the Real Estate Marketing Blog Widget Content
+ *
+ * @access public
+ * @return void
+ */
+function imforza_realestatenews_dashboard_widget(){
+	echo '<div id="imforza-real-estate-marketing-blog" class="rss-widget">';
+
+
+	wp_widget_rss_output(array(
+			'url' => 'http://www.realestatemarketingblog.org/feed/',  //put your feed URL here
+			'title' => __('Real Estate Marketing', 'imforza'), // Your feed title
+			'items' => 3, //how many posts to show
+			'show_summary' => 1, // 0 = false and 1 = true
+			'show_author' => 0,
+			'show_date' => 1
+		));
+
+	echo "</div>";
+}
+
+// Hook into wp_dashboard_setup and add our imFORZA widget
+add_action('wp_dashboard_setup', 'imforza_add_realestatenews_dashboard_widget');
+
+
+
+/**
+ * Adds the imFORZA Real Estate News Dashboard Widget
+ *
+ * @access public
+ * @return void
+ */
+function imforza_add_realestatenews_dashboard_widget(){
+
+	$client_details = get_option('imforza_client_details');
+
+	if ($client_details['industry'] == 'real-estate' ){
+
+	// Add our RSS widget
+	wp_add_dashboard_widget( 'imforza-realstate-rss', 'Real Estate Marketing Blog', 'imforza_realestatenews_dashboard_widget');
+
+	}
+}
+
+
+
+
+
+
+
+
+/**
+ * Adds the Beanstalk Repo Activity Widget
+ *
+ * @access public
+ * @return void
+ */
+ /*
+function imforza_beanstalk_dashboard_widget(){
+	echo '<div id="imforza-beanstalk-dashboard-widget" class="rss-widget">';
+
+	$client_details = get_option('imforza_client_details');
+
+
+	wp_widget_rss_output(array(
+			'url' => esc_url($client_details['beanstalk_feed_url']),  //put your feed URL here
+			'title' => __('Theme Development Activity', 'imforza'), // Your feed title
+			'items' => 3, //how many posts to show
+			'show_summary' => 1, // 0 = false and 1 = true
+			'show_author' => 0,
+			'show_date' => 1
+		));
+
+	echo "</div>";
+}
+add_action('wp_dashboard_setup', 'imforza_add_beanstalk_dashboard_widget');
+*/
+
+
+/**
+ * Adds the imFORZA Real Estate News Dashboard Widget
+ *
+ * @access public
+ * @return void
+ */
+ /*
+function imforza_add_beanstalk_dashboard_widget(){
+
+	$client_details = get_option('imforza_client_details');
+
+	if ( $client_details['beanstalk_feed_url'] != '' ) {
+
+	// Add our RSS widget
+	wp_add_dashboard_widget( 'imforza-beanstalk-rss', 'Theme Development Activity', 'imforza_beanstalk_dashboard_widget');
+
+	}
+
+}
+*/
+
