@@ -35,6 +35,7 @@ function imforza_adminbar_menu() {
 			"meta" => array("target" => "blank")
 		));
 	// Salesforce
+	if ( !empty($client_details['sf_acct_url'])) {
 	$wp_admin_bar->add_menu( array(
 			'parent' => 'imforza_internal',
 			'id'     => 'imforza_salesforce_account',
@@ -42,7 +43,9 @@ function imforza_adminbar_menu() {
 			'href' => esc_url($client_details['sf_acct_url']),
 			"meta" => array("target" => "blank")
 		));
+		}
 	// Basecamp
+	if ( !empty($client_details['bc_project_url'])) {
 	$wp_admin_bar->add_menu( array(
 			'parent' => 'imforza_internal',
 			'id'     => 'imforza_basecamp_project',
@@ -50,7 +53,9 @@ function imforza_adminbar_menu() {
 			'href' => esc_url($client_details['bc_project_url']),
 			"meta" => array("target" => "blank")
 		));
+		}
 	// Harvest
+	if ( !empty($client_details['harvest_url'])) {
 	$wp_admin_bar->add_menu( array(
 			'parent' => 'imforza_internal',
 			'id'     => 'imforza_harvest_project',
@@ -58,7 +63,9 @@ function imforza_adminbar_menu() {
 			'href' => esc_url($client_details['harvest_url']),
 			"meta" => array("target" => "blank")
 		));
+		}
 	// Designs
+	if ( !empty($client_details['design_url'])) {
 	$wp_admin_bar->add_menu( array(
 			'parent' => 'imforza_internal',
 			'id'     => 'imforza_designs_project',
@@ -66,7 +73,9 @@ function imforza_adminbar_menu() {
 			'href' => esc_url($client_details['design_url']),
 			"meta" => array("target" => "blank")
 		));
+		}
 	// Beanstalk
+	if ( !empty($client_details['beanstalk_url'])) {
 	$wp_admin_bar->add_menu( array(
 			'parent' => 'imforza_internal',
 			'id'     => 'imforza_beanstalk_project',
@@ -74,6 +83,7 @@ function imforza_adminbar_menu() {
 			'href' => esc_url($client_details['beanstalk_url']),
 			"meta" => array("target" => "blank")
 		));
+		}
 
 
 	// Add sub menu link "Connect"
@@ -123,7 +133,7 @@ function imforza_adminbar_menu() {
 			'parent' => 'imforza_link',
 			'id'     => 'imforza_support',
 			'title' => __( 'Support', 'imforza'),
-			'href' => __('//help.imforza.com/customer/portal/emails/new'),
+			'href' => __('https://www.imforza.com/support/get-support/'),
 			"meta" => array("target" => "blank", "onClick" => "_gaq.push(['_trackEvent', 'imFORZA News Plugin', 'Support']);")
 		));
 
