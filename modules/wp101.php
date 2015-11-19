@@ -40,11 +40,26 @@ function imforza_customize_wp101() {
 				'content' => '<iframe width="560" height="315" src="//www.youtube.com/embed/jU5Z0z_GOHA?rel=0&showinfo=0&controls=1&vq=hd1080&modestbranding=1" frameborder="0" allowfullscreen></iframe>'
 			);
 
+			$custom_videos['idxbroker.5'] = array(
+				'id'      => 'idxbroker.5',
+				'title'   => 'IDX Broker: Create Saved Links',
+				'content' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/FCitcT_qiKE?rel=0&showinfo=0&controls=1&vq=hd1080&modestbranding=1" frameborder="0" allowfullscreen></iframe>'
+			);
+
+			$custom_videos['idxbroker.6'] = array(
+				'id'      => 'idxbroker.6',
+				'title'   => 'IDX Broker: City Lists',
+				'content' => '<iframe width="560" height="315" src="//www.youtube.com/embed/B718PFvNquI?rel=0&showinfo=0&controls=1&vq=hd1080&modestbranding=1" frameborder="0" allowfullscreen></iframe>'
+			);
+
 			return $custom_videos;
 		} );
 
+
+
+
 		// TODO
-		// Lock down the seetings page to only the imforza-dev user, wp101 plugin has an option to set this already.
+		// Lock down the seetings page to only the imforza-dev user, wp101 plugin has an option to set this already. "wp101_admin_restriction"
 
 }
 

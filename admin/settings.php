@@ -16,7 +16,7 @@ add_action('admin_menu', 'imforza_create_menu');
 
 function imforza_create_menu() {
 
-	//create new top-level menu
+	// Add imFORZA Settings Page to Menu
 	add_menu_page('imFORZA Settings', 'imFORZA', 'administrator', 'imforza-settings', 'imforza_settings_page', '', 999);
 
 }
@@ -28,13 +28,13 @@ add_action( 'admin_menu', 'imforza_hide_menu' );
 function imforza_hide_menu() {
 
 	// Get Current User Info
-require_once(ABSPATH . '/wp-includes/pluggable.php');
-global $current_user;
-get_currentuserinfo();
+	require_once(ABSPATH . '/wp-includes/pluggable.php');
+	global $current_user;
+	get_currentuserinfo();
 
 	if ( $current_user->user_login != 'wpengine' && $current_user->user_login != 'imforza-dev' ) {
-  remove_menu_page( 'imforza-settings' );
-  }
+		remove_menu_page( 'imforza-settings' );
+  	}
 
 };
 
@@ -42,6 +42,9 @@ get_currentuserinfo();
 
 //call register settings function
 add_action( 'admin_init', 'imforza_register_settings' );
+
+
+
 
 
 ################################################################################
@@ -75,6 +78,8 @@ get_currentuserinfo();
 
 <hr />
 
+
+
 <p>This page can only be seen by imFORZA employees, if you are not an imFORZA employee and can see this page please email support@imforza.com for help.</p>
 
 <form method="post" action="options.php">
@@ -87,6 +92,25 @@ get_currentuserinfo();
 
 
     <table class="form-table">
+
+
+	    <?php /* Questionaire Questions
+
+		    What phrases best describe the business?
+		    What phrases are commonly used, but do not properly represent the business?
+		    Who are the top 2-3 competitors?
+		    How important is locality to the business?
+		    Who makes up the target demographic?
+		    What stage (in the buying cycle) does the business prefer to attract the most?
+
+
+		   https://www.imforza.com/support/service-questionnaires/web-development-questionnaire/
+		   https://www.imforza.com/support/service-questionnaires/web-marketing-questionnaire/
+		   https://www.imforza.com/support/service-questionnaires/content-development-questionnaire/
+
+
+		    */ ?>
+
 
 
         <tr>
@@ -135,6 +159,15 @@ get_currentuserinfo();
 		    </td>
         </tr>
 
+        <tr>
+	        <th>Website Type:</th>
+	        <td>
+ <label>
+		        <input type="radio" name="imforza_client_details[site_type]" id="" value="template" <?php if ($client_details['site_type'] == 'template' ){ echo 'checked="checked"'; } ?>> Template </label><br /><br />
+		      <label>   <input type="radio" name="imforza_client_details[site_type]" id="" value="custom" <?php if ($client_details['site_type'] == 'custom' ){ echo 'checked="checked"'; } ?>> Custom </label>
+
+	        </td>
+        </tr>
 
 		<tr>
 		 <th><label for="imforza_sfaccountid_input">Salesforce Account URL:</label></th>
@@ -181,8 +214,6 @@ get_currentuserinfo();
         </td>
         </tr>
 
-
-
         <!--
 	        Site Launch Date / Notes Sections
 	    -->
@@ -213,3 +244,4 @@ function imforza_settings_save() {
    }
 }
 */
+

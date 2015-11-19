@@ -52,22 +52,28 @@ function imforza_add_news_dashboard_widget(){
 function imforza_support_dashboard_widget() { ?>
 
 <style>
-a.button.imforza-button{background:#f7921e;color:#fff;border:0;font-weight:bold;text-transform:uppercase}a.button.imforza-button:hover{background:#ff971f;color:#fff}
+.imforza-support-widget {text-align: center;} .imforza-links li {display: inline-block;padding: 10px;text-align: center;} .imforza-links .dashicons { clear:both; display:block;margin: 3px auto; color: #333;} .imforza-links li a {color: #333;font-weight: bold;} .imforza-links li a:hover { color:#37B34A; }
 </style>
 
-	<div class="support-widget">
-	<div style="text-align:center;">
-	<a href="//www.imforza.com" target="_blank"><img src="<?php echo plugin_dir_url( __FILE__ ) . '../assets/images/supportwidget-logo.png'; ?>" alt="imFORZA" height="60" /></a></div>
-	<div style="border-top: 1px solid #ddd; padding-top: 10px; text-align:center;">
-		<p><strong>Have a feature request, bug, or other support issue?</strong><br /><br />Visit the <a style="color: #37B34A;" href="//help.imforza.com" target="_blank">imFORZA KnowledgeBase</a> or submit a ticket to get a fast response from our team.</p>
-		<p style="text-align: center;">
-		<ul class="imforza-button-list">
-			<li><a style="cursor: pointer;" class="button imforza-button" href="//help.imforza.com/customer/portal/emails/new" title="imFORZA Web Support" target="_blank">Get Support</a></li>
+	<div class="imforza-support-widget">
 
-		</ul>
-		</p>
+	<a href="//www.imforza.com" target="_blank"><img src="<?php echo plugin_dir_url( __FILE__ ) . '../assets/images/supportwidget-logo.png'; ?>" alt="imFORZA" height="60" /></a>
 
-		</div>
+
+
+<ul class="imforza-links">
+	<?php
+	if ( is_plugin_active( 'wp101/wp101.php' ) ) {
+		echo '<li><a href="admin.php?page=wp101"><span class="dashicons dashicons-video-alt3"></span> Video Guides</a></li>';
+	}
+?>
+	<li><a href="//help.imforza.com" target="_blank"><span class="dashicons dashicons-book"></span> KnowledgeBase</a></li>
+	<!-- <li><a href="https://help.imforza.com/customer/portal/chats/new" target="_blank"><span class="dashicons dashicons-format-chat"></span> Live Chat</a></li> -->
+	<li><a href="mailto:support@imforza.com"><span class="dashicons dashicons-email"></span> Email Support</a></li>
+
+</ul>
+
+
 	</div>
 	<?php
 }
@@ -136,60 +142,4 @@ function imforza_add_realestatenews_dashboard_widget(){
 
 	}
 }
-
-
-
-
-
-
-
-
-/**
- * Adds the Beanstalk Repo Activity Widget
- *
- * @access public
- * @return void
- */
- /*
-function imforza_beanstalk_dashboard_widget(){
-	echo '<div id="imforza-beanstalk-dashboard-widget" class="rss-widget">';
-
-	$client_details = get_option('imforza_client_details');
-
-
-	wp_widget_rss_output(array(
-			'url' => esc_url($client_details['beanstalk_feed_url']),  //put your feed URL here
-			'title' => __('Theme Development Activity', 'imforza'), // Your feed title
-			'items' => 3, //how many posts to show
-			'show_summary' => 1, // 0 = false and 1 = true
-			'show_author' => 0,
-			'show_date' => 1
-		));
-
-	echo "</div>";
-}
-add_action('wp_dashboard_setup', 'imforza_add_beanstalk_dashboard_widget');
-*/
-
-
-/**
- * Adds the imFORZA Real Estate News Dashboard Widget
- *
- * @access public
- * @return void
- */
- /*
-function imforza_add_beanstalk_dashboard_widget(){
-
-	$client_details = get_option('imforza_client_details');
-
-	if ( $client_details['beanstalk_feed_url'] != '' ) {
-
-	// Add our RSS widget
-	wp_add_dashboard_widget( 'imforza-beanstalk-rss', 'Theme Development Activity', 'imforza_beanstalk_dashboard_widget');
-
-	}
-
-}
-*/
 

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: imFORZA
-Version: 1.2.8
+Version: 1.3.0
 Plugin URI: //www.imforza.com#utm_source=wpadmin&utm_medium=plugin&utm_campaign=imforzanewsplugin
 Description: imFORZA is a Web Design and Marketing company based out of El Segundo, CA. Get quick access to imFORZA Support and the latest marketing news.
 Author: imFORZA
@@ -14,7 +14,7 @@ License: GPL v3
 
 
 // Define Plugin Version
-define( 'IMFORZA_PLUGIN_VERSION', '1.2.8' );
+define( 'IMFORZA_PLUGIN_VERSION', '1.3.0' );
 
 
 // Add Language Support
@@ -63,3 +63,4 @@ function imforza_deactivation() {
     flush_rewrite_rules();
 }
 register_deactivation_hook( __FILE__, 'imforza_deactivation' );
+

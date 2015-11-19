@@ -137,6 +137,17 @@ function imforza_adminbar_menu() {
 			"meta" => array("target" => "blank", "onClick" => "_gaq.push(['_trackEvent', 'imFORZA News Plugin', 'Support']);")
 		));
 
+	// Add sub menu link "Live Chat"
+	/*
+	$wp_admin_bar->add_menu( array(
+			'parent' => 'imforza_link',
+			'id'     => 'imforza_support_chat',
+			'title' => __( 'Live Chat Support', 'imforza'),
+			'href' => __('http://help.imforza.com:443/customer/widget/chats/new?'),
+			"meta" => array("target" => "blank")
+		));
+*/
+
 }
 add_action('admin_bar_menu', 'imforza_adminbar_menu',25);
 
